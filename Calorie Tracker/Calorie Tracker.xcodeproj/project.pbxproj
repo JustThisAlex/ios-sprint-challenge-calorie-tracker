@@ -17,6 +17,9 @@
 		FADA3B912409756500E0DB2D /* Tracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FADA3B8F2409756500E0DB2D /* Tracker.xcdatamodeld */; };
 		FADA3B93240975B100E0DB2D /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADA3B92240975B100E0DB2D /* CoreDataStack.swift */; };
 		FADA3B95240975CE00E0DB2D /* Tracker+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADA3B94240975CE00E0DB2D /* Tracker+Convenience.swift */; };
+		FADA3B9F2409946900E0DB2D /* TrackerRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADA3B9E2409946900E0DB2D /* TrackerRepresentation.swift */; };
+		FADA3BA22409951A00E0DB2D /* TrackerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADA3BA12409951A00E0DB2D /* TrackerController.swift */; };
+		FADA3BA4240998A100E0DB2D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FADA3BA3240998A100E0DB2D /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		FADA3B902409756500E0DB2D /* Tracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Tracker.xcdatamodel; sourceTree = "<group>"; };
 		FADA3B92240975B100E0DB2D /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		FADA3B94240975CE00E0DB2D /* Tracker+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tracker+Convenience.swift"; sourceTree = "<group>"; };
+		FADA3B9E2409946900E0DB2D /* TrackerRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerRepresentation.swift; sourceTree = "<group>"; };
+		FADA3BA12409951A00E0DB2D /* TrackerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerController.swift; sourceTree = "<group>"; };
+		FADA3BA3240998A100E0DB2D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,8 +92,10 @@
 		FADA3B74240971DA00E0DB2D /* Calorie Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				FADA3BA3240998A100E0DB2D /* GoogleService-Info.plist */,
 				FADA3B8C2409732300E0DB2D /* Views */,
 				FADA3B8B2409731000E0DB2D /* View Controllers */,
+				FADA3BA0240994F900E0DB2D /* Model Controllers */,
 				FADA3B8A240972D700E0DB2D /* Core Data */,
 				FADA3B89240972CD00E0DB2D /* Resources */,
 				FADA3B80240971DC00E0DB2D /* LaunchScreen.storyboard */,
@@ -112,6 +120,7 @@
 				FADA3B8F2409756500E0DB2D /* Tracker.xcdatamodeld */,
 				FADA3B92240975B100E0DB2D /* CoreDataStack.swift */,
 				FADA3B94240975CE00E0DB2D /* Tracker+Convenience.swift */,
+				FADA3B9E2409946900E0DB2D /* TrackerRepresentation.swift */,
 			);
 			path = "Core Data";
 			sourceTree = "<group>";
@@ -132,6 +141,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		FADA3BA0240994F900E0DB2D /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FADA3BA12409951A00E0DB2D /* TrackerController.swift */,
+			);
+			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,7 +161,7 @@
 				FADA3B6F240971DA00E0DB2D /* Frameworks */,
 				FADA3B70240971DA00E0DB2D /* Resources */,
 				44DC56C3C1C78A0DF346FE5B /* [CP] Embed Pods Frameworks */,
-				FADA3B9B24097EEF00E0DB2D /* ShellScript */,
+				FADA3BA52409991000E0DB2D /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -194,6 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FADA3B82240971DC00E0DB2D /* LaunchScreen.storyboard in Resources */,
+				FADA3BA4240998A100E0DB2D /* GoogleService-Info.plist in Resources */,
 				FADA3B7F240971DC00E0DB2D /* Assets.xcassets in Resources */,
 				FADA3B7D240971DA00E0DB2D /* Main.storyboard in Resources */,
 			);
@@ -241,7 +259,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Calorie Tracker/Pods-Calorie Tracker-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FADA3B9B24097EEF00E0DB2D /* ShellScript */ = {
+		FADA3BA52409991000E0DB2D /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -256,7 +274,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "Pods/SwiftLint/swiftlint\n\n";
+			shellScript = "Pods/SwiftLint/swiftlint\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -265,7 +283,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FADA3B9F2409946900E0DB2D /* TrackerRepresentation.swift in Sources */,
 				FADA3B93240975B100E0DB2D /* CoreDataStack.swift in Sources */,
+				FADA3BA22409951A00E0DB2D /* TrackerController.swift in Sources */,
 				FADA3B912409756500E0DB2D /* Tracker.xcdatamodeld in Sources */,
 				FADA3B76240971DA00E0DB2D /* AppDelegate.swift in Sources */,
 				FADA3B8E2409752600E0DB2D /* MainTableViewController.swift in Sources */,

@@ -8,4 +8,6 @@ target 'Calorie Tracker' do
   # Pods for Calorie Tracker
 pod "SwiftChart", :git => 'https://github.com/gpbl/SwiftChart', :branch => 'master'
 pod 'SwiftLint'
+pod 'Firebase/Firestore'
+pod 'FirebaseFirestoreSwift'
 end

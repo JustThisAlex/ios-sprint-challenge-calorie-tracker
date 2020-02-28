@@ -27,6 +27,9 @@ class MainTableViewController: UITableViewController {
         super.viewDidAppear(animated)
         self.notificationCenter.addObserver(self, selector: #selector(self.updateChart), name: NSNotification.Name("DataChanged"), object: nil)
         self.notificationCenter.post(name: NSNotification.Name("DataChanged"), object: nil)
+        TrackerController.shared.sync {
+            self.notificationCenter.post(name: NSNotification.Name("DataChanged"), object: nil)
+        }
     }
 
     @IBAction func addButtonPressed(_ sender: Any) {
@@ -37,14 +40,9 @@ class MainTableViewController: UITableViewController {
             alert.dismiss(animated: true, completion: nil)
         }))
         alert.addAction(UIAlertAction(title: "Add", style: .default, handler: { _ in
-            Tracker(kcals: Double(alert.textFields?[0].text ?? "") ?? 0)
-            do {
-                try CoreDataStack.shared.mainContext.save()
-            } catch {
-                fatalError("Failure to save context: \(error)")
-            }
+            TrackerController.shared.create(kcals: Double(alert.textFields?[0].text ?? "") ?? 0) {
             self.notificationCenter.post(name: NSNotification.Name("DataChanged"), object: nil)
-        }))
+            }}))
         self.present(alert, animated: true, completion: nil)
     }
 
@@ -53,7 +51,6 @@ class MainTableViewController: UITableViewController {
         let series = ChartSeries(fetchedResultsController.fetchedObjects?.compactMap({ $0.kcals }) ?? [])
         series.area = true
         chart.add(series)
-
     }
 
     // MARK: - Table view data source
